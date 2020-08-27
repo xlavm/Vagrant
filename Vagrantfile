@@ -1,15 +1,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# README
-#
+
 # Getting Started:
-# 1. vagrant plugin install vagrant-hostmanager
-# 2. vagrant up
-# 3. vagrant ssh
+# 1. vagrant plugin install vagrant-hostmanager #instalamos el plugin
+# 2. vagrant up #levantamos la máquina (se hace desde la ruta donde está Vagrantfile)
+# 3. vagrant ssh #para acceder a la máquina levantada
 #
-# This should put you at the control host
-#  with access, by name, to other vms
+
+#PLUGUINS
 
 #unless Vagrant.has_plugin?("vagrant-vbguest")
   #puts 'Installing vagrant-vbguest Plugin...'
@@ -21,19 +20,34 @@ unless Vagrant.has_plugin?("vagrant-hostmanager")
     system('vagrant plugin install vagrant-hostmanager')
 end
 
+#MAQUINAS
+
   Vagrant.configure(2) do |config|
     config.hostmanager.enabled = true
   
     config.vm.box = "centos/7"
   
-    config.vm.define "MogoCentos", primary: true do |h|
-      h.vm.hostname = "MogoCentos"
-      h.vm.network "private_network", ip: "192.168.56.102"
+    config.vm.define "MiMaquina1", primary: true do |h|
+      h.vm.hostname = "MiMaquina1"
+      h.vm.network "private_network", ip: "192.168.1.100"
       # dar instrucciones de instalación de docker desde shell
       # h.vm.provision :shell, path: "docker_install_script.sh"
       h.vm.provider "virtualbox" do |vb|
         vb.memory = "4096"
       end
+
+      #si quiero crear otra machine al tiempo, puedo añadir otra config así:
+
+      
+      #config.vm.define "MiMaquina2", primary: true do |h|
+      #  h.vm.hostname = "MiMaquina2"
+      #  h.vm.network "private_network", ip: "192.168.56.101"
+      # # dar instrucciones de instalación de docker desde shell
+      #  # h.vm.provision :shell, path: "docker_install_script.sh"
+      #  h.vm.provider "virtualbox" do |vb|
+      #    vb.memory = "2048" #le pongo 2GB de memoria RAM
+      #  end
+
     end
   end
   
