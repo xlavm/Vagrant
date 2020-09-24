@@ -1,4 +1,4 @@
 # hidden directory of vagrant file generate
 .vagrant
-
-*/*.log
+# hidden files .logs
+*.log
