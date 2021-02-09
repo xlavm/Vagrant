@@ -1,15 +1,15 @@
 # Vagrant
 
-Contiene instrucciones de uso para Vagrant
+Contain instructions for the use of Vagrant
 
-## Execution 
+## Executing 
 
 Execute de the commands:
 
 ```bash
 git clone https://github.com/xlavm/Vagrant.git
 
-cd Vagrant/centos_con_docker
+cd Vagrant/centos-docker
 ``` 
 
 And execute the command: `vagrant up`
