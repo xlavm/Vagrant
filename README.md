@@ -36,6 +36,6 @@ to access to you vagrant machine and use one port specific
 in the path of Vagrantfile, execute the command:
 
 ```bash
-ssh -i .vagrant\machines\centos\virtualbox\private_key vagrant@<ip_your_machine> -p <port_your> -L <port_to_expose>:localhost:<port_to_expose>
+ssh -i .vagrant\machines\centos\virtualbox\private_key vagrant@<ip_your_machine> -p <port_your_machine> -L <port_to_expose>:localhost:<port_to_expose>
 ```
-
+>NOTE: you see the `ip_your_machine` y `port_your_machine` executing the command: `vagrant ssh-config` in the path of your Vagrantfile
