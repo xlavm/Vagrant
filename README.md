@@ -24,3 +24,18 @@ for test the docker running, execute the command: `docker ps`
 * delete the machine: `vagrant destroy <machineName>`
 * status of machine: `vagrant status <machineName>`
 * view all the machines: `vagrant box list`
+
+## See IP, Port and other configs of vagrant machine
+
+in the path of Vagrantfile, execute the command: `vagrant ssh-config`
+
+## Port Local Forwarding
+
+to access to you vagrant machine and use one port specific 
+
+in the path of Vagrantfile, execute the command:
+
+```bash
+ssh -i .vagrant\machines\centos\virtualbox\private_key vagrant@<ip_your_machine> -p <port_your> -L <port_to_expose>:localhost:<port_to_expose>
+```
+
