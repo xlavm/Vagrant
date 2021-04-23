@@ -23,6 +23,19 @@ Contain instructions for the use of Vagrant
 2. And execute the command: `vagrant up`
 > Note: for test the docker running, execute the command: `docker ps`
 
+
+## Port Local Forwarding
+
+to access to you vagrant machine and use one port specific 
+
+in the path of Vagrantfile, execute the command:
+
+```bash
+ssh -i .vagrant\machines\centos\virtualbox\private_key vagrant@<ip_your_machine> -p <port_your_machine> -L <port_to_expose>:localhost:<port_to_expose>
+```
+>NOTE: you see the `ip_your_machine` and `port_your_machine` executing the command: `vagrant ssh-config` in the path of your Vagrantfile
+
+
 ## Virtual Machine Network
 
 ```bash
@@ -55,3 +68,5 @@ config.vm.define "centdockjens", primary: true do |h|
     end
   end
 ```
+
+

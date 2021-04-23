@@ -8,10 +8,10 @@
   #system('vagrant plugin install vagrant-vbguest')
 #end
 
-unless Vagrant.has_plugin?("vagrant-hostmanager")
-    puts 'Installing vagrant-hostmanager Plugin...'
-    system('vagrant plugin install vagrant-hostmanager')
-end
+#unless Vagrant.has_plugin?("vagrant-hostmanager")
+    #puts 'Installing vagrant-hostmanager Plugin...'
+    #system('vagrant plugin install vagrant-hostmanager')
+#end
 
 #MACHINES
 
@@ -20,9 +20,9 @@ end
   
     config.vm.box = "centos/7"
   
-    config.vm.define "cendock", primary: true do |h|
-      h.vm.hostname = "cendock"
-      h.vm.network "private_network", ip: "192.168.1.101"
+    config.vm.define "docktos", primary: true do |h|
+      h.vm.hostname = "docktos"
+      h.vm.network "private_network", ip: "192.168.1.100"
       #install docker from shell
       h.vm.provision :shell, path: "docker_install_script.sh"
       h.vm.provider "virtualbox" do |vb|
