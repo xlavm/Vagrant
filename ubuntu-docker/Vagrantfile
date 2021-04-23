@@ -20,8 +20,8 @@ end
   
     config.vm.box = "ubuntu/bionic64"
   
-    config.vm.define "ubuntu", primary: true do |h|
-      h.vm.hostname = "ubuntu"
+    config.vm.define "ubundock", primary: true do |h|
+      h.vm.hostname = "ubundock"
       h.vm.network "private_network", ip: "192.168.1.101"
       #install docker from shell
       h.vm.provision :shell, path: "docker_install_script.sh"

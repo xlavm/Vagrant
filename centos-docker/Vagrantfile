@@ -16,13 +16,13 @@ end
 #MACHINES
 
   Vagrant.configure(2) do |config|
-    config.hostmanager.enabled = true
+    #config.hostmanager.enabled = true
   
     config.vm.box = "centos/7"
   
-    config.vm.define "centos", primary: true do |h|
-      h.vm.hostname = "centos"
-      h.vm.network "private_network", ip: "192.168.1.100"
+    config.vm.define "cendock", primary: true do |h|
+      h.vm.hostname = "cendock"
+      h.vm.network "private_network", ip: "192.168.1.101"
       #install docker from shell
       h.vm.provision :shell, path: "docker_install_script.sh"
       h.vm.provider "virtualbox" do |vb|
