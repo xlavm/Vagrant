@@ -29,6 +29,7 @@ Contain instructions for the use of Vagrant
 1. in the path of Vagrantfile, execute the command:
    ```bash
    ssh -i .vagrant\machines\centos\virtualbox\private_key vagrant@<ip_your_machine> -p <port_your_machine> -L <port_to_expose>:localhost:<port_to_expose>
+   ssh -i .vagrant\machines\jendocktos\virtualbox\private_key vagrant@127.0.0.1 -p 2222 -L 9090:localhost:9090
    ```
 > NOTE: you see the `ip_your_machine` and `port_your_machine` executing the command: `vagrant ssh-config` in the path of your Vagrantfile
 
